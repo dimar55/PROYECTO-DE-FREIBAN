@@ -1,5 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Login from '../views/Login.vue'
+import Menu from '../views/Menu.vue'
 import axios from "axios";
 
 
@@ -8,6 +9,11 @@ const routes = [
     path: '/',
     name: 'Login',
     component: Login
+  },
+  {
+    path: '/Menu',
+    name: 'Menu',
+    component: Menu
   },
  
 ]
