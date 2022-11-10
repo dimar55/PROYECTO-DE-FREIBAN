@@ -1,5 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Login from '../views/Login.vue'
+import axios from "axios";
+
 
 const routes = [
   {
@@ -10,11 +12,17 @@ const routes = [
  
 ]
 
+const router = createRouter({
+  history: createWebHashHistory(),
+  routes
+})
+
 router.beforeEach(async (to, from) => {
   if (
     !sessionStorage.getItem('jwt') &&
     to.name !== 'Login'
   ) {
+    
     return { name: 'Login' }
   }else{
     let token = sessionStorage.getItem('jwt');
@@ -31,7 +39,7 @@ router.beforeEach(async (to, from) => {
 
 })
 
-router.beforeEach(async (to, from) => {
+/*router.beforeEach(async (to, from) => {
   if (
     sessionStorage.getItem('jwt') &&
     to.name == 'Login'
@@ -48,11 +56,8 @@ router.beforeEach(async (to, from) => {
     }
   }
 
-})
+})*/
 
-const router = createRouter({
-  history: createWebHashHistory(),
-  routes
-})
+
 
 export default router
