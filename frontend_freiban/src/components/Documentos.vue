@@ -23,11 +23,32 @@
       </div>
     </div>
   </transition>
+
+  <transition name="fade">
+    <div class="modal-overlay" v-show="showModalPDF"></div>
+  </transition>
+  <transition name="fade">
+    <div class="modal" v-show="showModalPDF">
+      <div class="modal-container">
+        <div class="container-flex">
+          <h1>PDF</h1>
+          <img src="../assets/icon_X.png" alt="" @click="cerrarPDF()">
+        </div>
+        <div>
+          <iframe class="embed-responsive-item" :src="pdf" allowfullscreen width="1280" height="720"></iframe>
+        </div>
+      </div>
+    </div>
+  </transition>
+
   <div class="ctn-equipos">
     <div class="equipos" v-for="recurso in recursos">
       <h1>{{ recurso.nombre_recurso }}</h1>
       <div>
         <button class="btn" @click="actualizar(recurso.id_recurso)">ACTUALIZAR</button>
+      </div>
+      <div>
+        <button class="btn" @click="verPDF(recurso.valor_recurso)">VER PDF</button>
       </div>
     </div>
   </div>
@@ -43,7 +64,9 @@ export default {
       file: null,
       recurso: null,
       showModalRecurso: false,
+      showModalPDF: false,
       equipo: this.$route.params.Id_equipo,
+      pdf: "",
       recursos: []
     }
   },
@@ -117,8 +140,10 @@ export default {
                 timer: 1200,
               });
             }
+            this.$router.push({ path: '/Menu' });
           }).catch((err) => {
             Swal.close();
+            
             console.log(err);
             Swal.fire({
               icon: "error",
@@ -126,13 +151,21 @@ export default {
               showConfirmButton: false,
               timer: 1200,
             });
+            this.$router.push({ path: '/Menu' });
           })
           this.cerrarModal();
-
+          
       }
 
+    },
+    verPDF(pdf){
+      this.pdf = pdf;
+      this.showModalPDF = true;
+    },
+    cerrarPDF(){
+      this.pdf = "";
+      this.showModalPDF = false;
     }
-
   },
   mounted() {
     this.cargarRecursos();
