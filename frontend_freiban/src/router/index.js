@@ -1,6 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Login from '../views/Login.vue'
 import Menu from '../views/Menu.vue'
+import VerDocumentos from '../views/VerDocumentos.vue'
 import axios from "axios";
 
 
@@ -14,6 +15,12 @@ const routes = [
     path: '/Menu',
     name: 'Menu',
     component: Menu
+  },
+
+  {
+    path: '/VerDocumentos',
+    name: 'VerDocumentos',
+    component: VerDocumentos
   },
  
 ]
