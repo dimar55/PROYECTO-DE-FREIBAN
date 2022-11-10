@@ -5,14 +5,20 @@
             <h1>CONTROL JF INGENIERIA</h1>
         </div>
         <div class="logo_salir">
-            <img src="../assets/logout.png" alt="">
+            <img src="../assets/logout.png" alt="" @click="cerrarSesion()">
         </div>
 </div>
 </template>
 
 <script>
 export default{
-    name: 'Header'
+    name: 'Header',
+    methods:{
+        cerrarSesion(){
+            sessionStorage.clear();
+            this.$router.push({ path: '/' });
+        }
+    }
 }
 </script>
 

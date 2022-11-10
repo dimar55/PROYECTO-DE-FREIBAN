@@ -1,33 +1,29 @@
 <template>
     <div class="ctn-equipos">
-        <div class="equipos">
-            <h1>EQUIPO WE ARE THE BEST</h1>
+        <div class="equipos" v-for="equipo in equipos">
+            <h1>{{equipo.nombre_equipo}}</h1>
             <div class="campos">
                 <p class="p">MARCA:</p>
-                <p>sdsasdsddsad</p>
-            </div>
-            <div class="campos">
-                <p class="p">MARCA:</p>
-                <p>sadsdasdsdasd</p>
+                <p>{{equipo.marca_equipo}}</p>
             </div>
             <div class="campos">
                 <p class="p">MODELO:</p>
-                <p>asdsadsadsdasda</p>
+                <p>{{equipo.modelo_equipo}}</p>
             </div>
             <div class="campos">
                 <p class="p">SERIAL:</p>
-                <p>asdsadsaasdasdsa</p>
+                <p>{{equipo.serial_equipo}}</p>
             </div>
             <div class="campos">
                 <p class="p">ACTIVO FIJO:</p>
-                <p>asdsadasdasdsa</p>
+                <p>{{equipo.num_placa_equipo}}</p>
             </div>
             <div class="campos">
                 <p class="p">UBICACIÓN:</p>
-                <p>asdasdsadasdasdsadas</p>
+                <p>{{equipo.area_equipo}}</p>
             </div>
             <div>
-                <button class="btn">VER DOCUMENTOS</button>
+                <button class="btn" @click="goRecursos(equipo.id_equipo)">VER DOCUMENTOS</button>
             </div>
         </div>
     </div>
@@ -52,19 +48,23 @@ export default {
                 }else{
                     Swal.fire({
                             icon: "info",
-                            title: "No se han cargado equipos",
+                            title: "No se han cargado los equipos",
                             showConfirmButton: false,
                             timer: 1200,
                         });
                 }
             }).catch((err)=>{
+                console.log(err);
                 Swal.fire({
                             icon: "error",
-                            title: "Usuario y/o contraseña incorrecta",
+                            title: "No se han cargado los equipos",
                             showConfirmButton: false,
                             timer: 1200,
                         });
             })
+        },
+        goRecursos(equipo){
+            alert(equipo);
         }
     },
     mounted(){
