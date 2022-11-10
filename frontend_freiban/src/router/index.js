@@ -45,7 +45,7 @@ router.beforeEach(async (to, from) => {
 
 })
 
-/*router.beforeEach(async (to, from) => {
+router.beforeEach(async (to, from) => {
   if (
     sessionStorage.getItem('jwt') &&
     to.name == 'Login'
@@ -62,7 +62,7 @@ router.beforeEach(async (to, from) => {
     }
   }
 
-})*/
+})
 
 
 
