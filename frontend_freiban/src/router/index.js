@@ -18,7 +18,7 @@ const routes = [
   },
 
   {
-    path: '/VerDocumentos',
+    path: '/VerDocumentos/:Id_equipo',
     name: 'VerDocumentos',
     component: VerDocumentos
   },

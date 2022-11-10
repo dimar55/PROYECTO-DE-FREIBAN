@@ -64,7 +64,7 @@ export default {
             })
         },
         goRecursos(equipo){
-            alert(equipo);
+            this.$router.push({ name: 'VerDocumentos', params: { Id_equipo: equipo } });  
         }
     },
     mounted(){
