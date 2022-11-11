@@ -131,8 +131,7 @@ export default {
 }
 
 .btn {
-    height: 55px;
-    width: 250px;
+    padding: 1rem;
     border-radius: 25px;
     background-color: #EFBF25;
     border: none;

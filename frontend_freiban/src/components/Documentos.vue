@@ -12,7 +12,7 @@
         <div>
           <form class="" v-on:submit.prevent="actualizarRecurso">
             <div class="campos_usu">
-              <p>NOMBRE DE ELEMENTO:</p>
+              <p>DOCUMENTO:</p>
               <input type="file" ref="actualizarRecurso" v-on:change="onFileChange" required>
             </div>
             <div class="text-centerB">
@@ -44,10 +44,8 @@
   <div class="ctn-equipos">
     <div class="equipos" v-for="recurso in recursos">
       <h1>{{ recurso.nombre_recurso }}</h1>
-      <div>
+      <div class="container-flex-se">
         <button class="btn" @click="actualizar(recurso.id_recurso)">ACTUALIZAR</button>
-      </div>
-      <div>
         <button class="btn" @click="verPDF(recurso.valor_recurso)">VER PDF</button>
       </div>
     </div>
@@ -112,7 +110,7 @@ export default {
       console.log(this.file)
       if (this.recurso) {
         Swal.fire({
-          title: 'Actualizando...',
+          title: 'Actualizando',
           allowEscapeKey: false,
           allowOutsideClick: false,
           didOpen: () => {

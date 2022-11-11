@@ -2,6 +2,8 @@
     <div class="ctn-header">
         <div class="titular">
             <img src="../assets/jf.jpeg" alt="" width="300" height="200">
+        </div>
+        <div>
             <h1>CONTROL JF INGENIERIA</h1>
         </div>
         <div class="logo_salir">
@@ -28,6 +30,7 @@ export default{
     padding: 20px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: #0E5A96;
     color: white;
 }
@@ -46,7 +49,6 @@ export default{
 }
 
 .titular img{
-    margin-right: 150px;
     border-radius: 30px;
 }
 
