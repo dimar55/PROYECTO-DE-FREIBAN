@@ -6,7 +6,7 @@
     <div class="modal" v-show="showModalRecurso">
       <div class="modal-container">
         <div class="container-flex">
-          <h1>Añadir EPP</h1>
+          <h1>ACTUALIZAR </h1>
           <img src="../assets/icon_X.png" alt="" @click="cerrarModal()">
         </div>
         <div>

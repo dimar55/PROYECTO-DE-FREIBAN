@@ -1,7 +1,7 @@
 <template>
     <div class="ctn-header">
         <div class="titular">
-            <img src="../assets/jf.jpeg" alt="" width="300" height="200">
+            <img src="../assets/jf.jpeg" alt="" width="300" height="200" @click="go_menu()">
         </div>
         <div>
             <h1>CONTROL JF INGENIERIA</h1>
@@ -19,6 +19,9 @@ export default{
         cerrarSesion(){
             sessionStorage.clear();
             this.$router.push({ path: '/' });
+        },
+        go_menu(){
+            this.$router.push({ path: '/Menu' });
         }
     }
 }
@@ -50,6 +53,7 @@ export default{
 
 .titular img{
     border-radius: 30px;
+    cursor: pointer;
 }
 
 .logo_salir{

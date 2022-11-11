@@ -12,9 +12,9 @@
                 </div>
                 <div>
                     <form class="" v-on:submit.prevent="crearRecurso">
-                        <div class="campos_usu">
+                        <div class="campos_usua">
                             <p>NOMBRE DEL DOCUMENTO:</p>
-                            <input type="text" v-model="recurso.Nombre_recurso" required>
+                            <input type="text" class="campo" v-model="recurso.Nombre_recurso" required>
                         </div>
                         <div class="campos_usu">
                             <p>DOCUMENTO:</p>
@@ -213,5 +213,23 @@ export default {
 .container-flex-se {
     display: flex;
     justify-content: space-evenly;
+}
+
+.campo{
+    width: 430px;
+    height: 60px;
+    border-radius: 25px;
+    border: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 30px;
+    padding-left: 10px;
+    
+}
+
+.campos_usu input{
+    width: 430px;
+font-size: 18px;
 }
 </style>
