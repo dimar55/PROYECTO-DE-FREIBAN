@@ -18,7 +18,7 @@
                         </div>
                         <div class="campos_usu">
                             <p>DOCUMENTO:</p>
-                            <input type="file" ref="actualizarRecurso" v-on:change="onFileChange" required>
+                            <input type="file" ref="actualizarRecurso" v-on:change="onFileChange" accept="application/pdf" required>
                         </div>
                         <div class="text-centerB">
                             <button class="btn mbttm" type="submit">AÑADIR</button>
