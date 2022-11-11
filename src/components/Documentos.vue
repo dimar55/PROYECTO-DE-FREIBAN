@@ -35,7 +35,7 @@
           <img src="../assets/icon_X.png" alt="" @click="cerrarPDF()">
         </div>
         <div>
-          <iframe class="embed-responsive-item" :src="pdf" allowfullscreen width="1280" height="720"></iframe>
+          <iframe class="embed-responsive-item" :src="pdf" allowfullscreen width="1024" height="500"></iframe>
         </div>
       </div>
     </div>
